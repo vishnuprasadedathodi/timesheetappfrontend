@@ -1,0 +1,52 @@
+
+<app-adminheader></app-adminheader>
+<br>
+<br>
+<div class="col-sm-4" >
+    <input type="text" name="search" placeholder="search...." [(ngModel)]="term">
+</div> 
+
+    <br>
+<table class="table table-striped" >
+    <thead >
+        <tr>
+            <th  (click)="changeOrder('id')">Employee Id</th>
+            <th (click)="changeOrder('name')">Name</th>
+            <th >Designation</th>    
+            <th (click)="changeOrder('age')">Age</th>
+            <th >Gender</th>
+            <th >Contact number</th>
+            <th >Email id</th>
+            
+            <th >Action</th>
+            
+            <th >Action</th>
+            
+          
+        </tr>
+    </thead>
+
+    <tbody style="font-size: medium;">
+        <tr *ngFor="let e of emparray |paginate: { itemsPerPage: 5, currentPage: p }|filter:term| orderBy: order" >
+
+
+           <td style="color:rgba(75, 9, 0, 0.993);font-weight:500;">{{e.id}}</td>
+            <td style="color:rgba(75, 9, 0, 0.993);font-weight:500;">{{e.name}}</td> 
+            <td style="color:rgba(75, 9, 0, 0.993);font-weight:500;">{{e.designation}}</td>
+            <td style="color:rgba(75, 9, 0, 0.993);font-weight:500;">{{e.age}}</td>
+            <td style="color:rgba(75, 9, 0, 0.993);font-weight:500;">{{e.gender}}</td>
+            <td style="color:rgba(75, 9, 0, 0.993);font-weight:500;">{{e.phn_no}}</td>
+            <td style="color:rgba(75, 9, 0, 0.993);font-weight:500;">{{e.email}}</td>
+            
+            <td ><button type="submit" class="btn btn-success" [routerLink]="['/admin','edit',e.id]">Edit</button></td>
+            <td ><button type="submit" class="btn btn-danger" (click)="deleteEmployee(e.id)">Delete</button></td>
+            
+            
+        </tr>
+    </tbody>
+</table>
+
+<pagination-controls (pageChange)="p = $event"></pagination-controls>
+
+
+

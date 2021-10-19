@@ -1,0 +1,56 @@
+<app-employeeheader></app-employeeheader>
+<br>
+<br>
+
+
+<form #frmval=ngForm name="myform" class="form" (ngSubmit)="addleave(frmval.value)" class="form container">
+    <table class="center">
+    <div class="form-group">
+        <th>
+    <label for="date">Date</label>
+</th>
+<tr>
+    <input type="date" id="date" name="date" ngModel required >
+</tr>
+    
+</div>
+<br>
+<div class="form-group">
+    <th>
+    <label>Days</label></th>
+    <tr>
+    <input type="text" name="days"  #days="ngModel" class="form-control"  ngModel required>
+</tr>
+    <div *ngIf="days.touched && days.invalid">
+        <div class="alert alert-danger" *ngIf="days.hasError('required')">This field is required</div>
+   
+    </div>
+
+</div>
+<br>
+<div class="form-group">
+    <th>
+    <label for="leave_type">Leave Type</label></th>
+<tr>
+    <select name="leave_type" id="leave_type" ngModel required>
+        <option value=""></option>
+      <option value="EL">El</option>
+      <option value="SL">SL</option>
+      <option value="Maternity">Maternity</option>
+      <option value="Paternity">Paternity</option>
+      <option value="Other">Other</option>
+    </select>
+</tr>
+</div>
+<br>
+<table>
+    <tr><td><button type="submit" class="btn btn-primary" [disabled]="frmval.invalid">submit</button></td>
+        <td><button type="button" class="btn btn-primary"  routerLink="/employee/profile">Back</button></td>
+        <td><button type="reset" class="btn btn-primary" >Reset</button><td>
+    
+    </td>
+
+    </tr>
+    </table>
+</table>
+</form>

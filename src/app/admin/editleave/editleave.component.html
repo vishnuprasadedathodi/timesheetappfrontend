@@ -1,0 +1,53 @@
+
+<app-adminheader></app-adminheader>
+<br>
+<br>
+<br>
+
+<form #frmval=ngForm name="myform" class="form" (ngSubmit)="editleave(frmval.value)" class="form container">
+  <table>
+  <div class="form-group">
+    <th>
+    <label for="date">From Date</label></th>
+    <tr>
+    <input type="date" id="date" name="date" ngModel required [ngModel]="leaveobj?.date" readonly></tr>
+  </div>
+  <br>
+  <div class="form-group">
+    <th>
+    <label>Days</label></th>
+    <tr>
+    <input type="text" id="days" name="days" ngModel required [ngModel]="leaveobj?.days" readonly></tr>
+  </div>
+  <br>
+  <div class="form-group">
+    <th>
+    <label>Leave Type</label></th>
+    <input type="text" id="leave_type" name="leave_type" ngModel required [ngModel]="leaveobj?.leave_type" readonly>
+  </div>
+  <br>
+  <div class="form-group">
+    <div class="btn-group btn-group-toggle" data-toggle="buttons">
+        <label class="btn btn-success active">
+          <input type="radio" name="status" id="approved" value="approved" autocomplete="off" checked  [ngModel]="leaveobj?.status" > Approve
+        </label>
+        <label class="btn btn-danger">
+          <input type="radio" name="status" id="rejected" value="rejected"autocomplete="off" [ngModel]="leaveobj?.status" > Reject
+        </label>
+       </div>
+   
+
+      </div>
+      <br>
+
+      <button type="submit" name="button"class="btn btn-primary" >Confirm</button>
+    </table>
+    </form>
+    <br>
+    <td><button type="button" class="btn btn-primary"  routerLink="/admin/dashboard">Back</button></td>
+
+    <br>
+    
+    <br>
+    <br>
+    

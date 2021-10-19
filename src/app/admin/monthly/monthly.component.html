@@ -1,0 +1,42 @@
+
+<app-adminheader></app-adminheader>
+<br>
+<br>
+<div class="col-sm-4" >
+    <input type="text" name="search" placeholder="search...." [(ngModel)]="term">
+</div> 
+
+<br>
+<br>
+<table class="table table-striped" >
+    <thead>
+        <tr>
+            <th >Employee Id</th>
+            <th >Name</th>
+            <th>Date</th>    
+            <th >From</th>
+            <th >To</th>
+            
+        </tr>
+    </thead>
+
+    <tbody style="font-size: medium;;">
+        <tr *ngFor="let d of datearr |paginate: { itemsPerPage: 5, currentPage: p }|filter:term"  >
+
+
+           <td>{{d.id}}</td>
+            <td>{{d.name}}</td> 
+            <td>{{d.date}}</td>
+            <td>{{d.start_time}}</td>
+            <td>{{d.end_time}}</td>
+           
+            
+            
+            
+        </tr>
+    </tbody>
+</table>
+<br>
+<pagination-controls (pageChange)="p = $event"></pagination-controls>
+<br>
+<td><button type="button" class="btn btn-primary"  routerLink="/admin/date">Back</button></td>

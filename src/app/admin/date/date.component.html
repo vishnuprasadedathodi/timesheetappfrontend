@@ -1,0 +1,61 @@
+
+<app-adminheader></app-adminheader>
+<br>
+<br>
+
+        <table class="center">
+    <div class="form-group">
+        <h3 style="color:rgb(151, 3, 3)">Search by Custom date</h3>
+       <th>
+    <label for="date" style="font-weight: 800;">From</label></th>
+        <tr>
+    <input type="date" id="date1" name="date1" ngModel required [(ngModel)]="date1"></tr>
+
+    
+   <th>
+    <label for="date" style="font-weight: 800;">To</label></th>
+   <tr>
+    <input type="date" id="date2" name="date2" ngModel required [(ngModel)]="date2"></tr>
+   
+    
+ <br>
+    <button type="submit" name="button" (click)="checkdate()" class="btn btn-success">Get details</button>
+</div>
+
+<br>
+<br>
+
+
+<div class="form-group">
+    <h3 style="color:rgb(151, 3, 3)">Search by Year</h3>
+    <th>
+    <label for="year" style="font-weight: 800;">Enter year</label>
+</th>
+<tr>
+    <input type="text" id="year" name="year" ngModel required [(ngModel)]="year" placeholder="yyyy">
+</tr>
+<br>
+   <button type="submit" name="button" (click)="checkyearly()" class="btn btn-success">Get details</button>
+</div>
+
+<br>
+<br>
+<div class="form-group">
+    <h3 style="color:rgb(151, 3, 3)"> Search by Month</h3>
+    <th></th>
+    <label for="year" style="font-weight: 800;">Enter year</label>
+    <tr>
+    <input type="text" id="year" name="year" ngModel required [(ngModel)]="year" placeholder="yyyy"></tr>
+    
+    <th><label for="month" style="font-weight: 800;">Enter month</label></th>
+    <input type="text" id="month" name="month" ngModel required [(ngModel)]="month" placeholder="mm">
+    <br>
+   <button type="submit" name="buton" (click)="checkmonthly()"class="btn btn-success">Get details</button>
+</div>
+</table>
+<br>
+<br>
+<br>
+
+
+<td><button type="button" class="btn btn-primary"  routerLink="/admin/timesheet">Back</button></td>

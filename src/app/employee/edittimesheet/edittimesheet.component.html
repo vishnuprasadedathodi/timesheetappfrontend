@@ -1,0 +1,48 @@
+
+
+ <app-employeeheader></app-employeeheader>
+ <br>
+ <br>
+
+<form #frmval=ngForm name="myform" class="form" (ngSubmit)="edittime(frmval.value)" class="form container">
+<table class=center>
+  <div class="form-group">
+    <th>
+  <label for="date">Date</label></th>
+  <tr>
+<input type="date" id="date" name="date" ngModel required [ngModel]="timeobj.date"></tr>
+</div>
+
+<div class="form-group">
+  <th>
+<label>Start Time</label></th>
+<tr>
+<input type="time" id="start_time" name="start_time" ngModel required [ngModel]="timeobj.start_time"></tr>
+</div>
+
+<div class="form-group">
+  <th>
+<label>End Time</label></th>
+<tr>
+<input type="time" id="end_time" name="end_time" ngModel required [ngModel]="timeobj.end_time"></tr>
+</div>
+<br>
+
+
+<div class="form-group">
+<div class="btn-group btn-group-toggle" data-toggle="buttons">
+    <label class="btn btn-primary active">
+      <input type="radio" name="status" id="saved" value="saved" autocomplete="off" checked  [ngModel]="timeobj.status" > save
+    </label>
+    <label class="btn btn-success">
+      <input type="radio" name="status" id="saved" value="submitted"autocomplete="off" [ngModel]="timeobj.status" > submit
+    </label>
+</div>
+  </div>
+  <br>
+  
+  <button type="submit" name="button" class="btn btn-primary">Confirm</button>
+
+</table>
+
+</form>

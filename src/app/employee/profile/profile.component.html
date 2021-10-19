@@ -1,0 +1,90 @@
+
+   
+  <app-employeeheader></app-employeeheader>
+
+
+<!-- <br>
+  <table class="table table-striped" >
+    <thead>
+        <tr>
+            <th>Employee Id</th>
+            <th >Name</th>
+            <th>Designation</th>    
+            <th >Age</th>
+            <th >Gender</th>
+            <th>Contact number</th>
+            <th>Email id</th>
+          
+        </tr>
+    </thead>
+
+    <tbody style="font-size: medium;;">
+        
+<tr>
+
+           <td>{{emparray.id}}</td>
+            <td>{{emparray.name}}</td> 
+            <td>{{emparray.designation}}</td>
+            <td>{{emparray.age}}</td>
+            <td>{{emparray.gender}}</td>
+            <td>{{emparray.phn_no}}</td>
+            <td>{{emparray.email}}</td>
+            
+            
+            
+            
+        </tr>
+    </tbody>
+</table>
+<!-- <div>
+<button type="submit" class="btn btn-success" [routerLink]="['/employee','edit',emparray.id]">Edit</button>
+</div> --> 
+<div>
+    <button type="submit" class="btn btn-success" [routerLink]="['/employee','editprofile',emparray.id]">Edit</button>
+    </div>
+
+   
+
+       <form class="form-group">
+        <div  >
+        <table  class="center" style="width:50%; height: min-content;">
+            <tr>
+                <th>Employee ID:</th>
+                <td>{{emparray.id}}</td>
+                </tr>
+
+            <tr>
+                <th>Name:</th>
+                <td>{{emparray.name}}</td>
+                </tr>
+
+
+            <tr>
+                <th>Designation</th>
+                <td>{{emparray.designation}}</td>
+                </tr>
+
+            <tr>
+                <th>Age</th>
+                <td>{{emparray.age}}</td>
+                </tr>
+            <tr>
+                <th>Gender</th>
+                <td>{{emparray.gender}}</td>
+                </tr>
+
+            <tr>
+                <th>Contact number</th>
+                <td>{{emparray.phn_no}}</td>
+            </tr>
+            
+            <tr>
+                <th>Email id</th>
+                <td>{{emparray.email}}</td>
+                </tr>
+
+
+            
+            </table>
+        </div>
+    </form>

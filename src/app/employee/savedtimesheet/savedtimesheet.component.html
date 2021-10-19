@@ -1,0 +1,40 @@
+<app-employeeheader></app-employeeheader>
+<br>
+<br>
+<div class="col-sm-4" >
+    <input type="text" name="search" placeholder="search...." [(ngModel)]="term">
+</div> 
+<br>
+<br>
+<table class="table table-striped" >
+    <thead>
+        <tr>
+            <th>Date</th>
+            <th >From</th>
+            <th>To</th>
+   
+           
+          
+        </tr>
+    </thead>
+
+    <tbody style="font-size: medium;">
+        
+        <tr *ngFor="let v of viewarr |paginate: { itemsPerPage: 5, currentPage: p }|filter:term">
+
+           <td>{{v.date}}</td>
+            <td>{{v.start_time}}</td> 
+            <td>{{v.end_time}}</td>
+           
+            <td ><button type="submit" class="btn btn-success" [routerLink]="['/employee','edittime',v.tid]">Edit</button></td>
+            
+            
+            
+            
+        </tr>
+    </tbody>
+</table>
+<br>
+<pagination-controls (pageChange)="p = $event"></pagination-controls>
+<br>
+<td><button type="button" class="btn btn-primary"  routerLink="/employee/viewtimesheet">Back</button></td>

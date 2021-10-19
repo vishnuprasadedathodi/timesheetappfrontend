@@ -1,0 +1,23 @@
+table, th, td {
+    border: 2px solid black;
+    text-align: center;
+    border-spacing: 5px;
+  }
+
+  th {
+    display: table-cell;
+    vertical-align: inherit;
+    font-weight: bold;
+    text-align: center;
+  }
+
+  th{
+      height:1.5cm;
+      width:5cm
+  }
+  .center {
+    margin-left: auto;
+    margin-right: auto;
+  }
+  
+

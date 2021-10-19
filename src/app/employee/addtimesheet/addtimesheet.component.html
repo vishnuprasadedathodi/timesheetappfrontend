@@ -1,0 +1,56 @@
+<app-employeeheader></app-employeeheader>
+  <br>
+  <br>
+<div >
+
+<form #frmval=ngForm name="myform" class="form" (ngSubmit)="addtime(frmval.value)" class="form container">
+  <table class="center">
+<div  class="form-group">
+  <th>
+<label for="date">Date</label></th>
+<tr><input type="date" id="date" name="date" ngModel required [ngModel]="addtimearr.date"></tr>
+</div>
+<br>
+<div  class="form-group">
+  <th>
+<label>Start Time</label></th>
+  <tr>
+<input type="time" id="start_time" name="start_time" ngModel required [ngModel]="addtimearr.start_time">
+</tr>
+</div>
+<br>
+<div  class="form-group">
+  <th>
+<label>End Time</label></th>
+<tr>
+<input type="time" id="end_time" name="end_time" ngModel required [ngModel]="addtimearr.end_time">
+</tr>
+</div>
+
+<br>
+<div class="btn-group btn-group-toggle" data-toggle="buttons"  class="form-group">
+    <label class="btn btn-success active">
+      <input type="radio" name="status" id="saved" value="saved" autocomplete="off" checked  [ngModel]="addtimearr.status" > save
+    </label>
+    <label class="btn btn-danger">
+      <input type="radio" name="status" id="saved" value="submitted"autocomplete="off" [ngModel]="addtimearr.status" > submit
+    </label>
+   
+  </div>
+  
+  <br>
+ 
+
+  <table>
+    <tr><td><button type="submit" class="btn btn-primary" [disabled]="frmval.invalid">Confirm</button></td>
+        <td><button type="button" class="btn btn-primary"  routerLink="/employee/profile">Back</button></td>
+       
+    
+    
+
+    </tr>
+    </table>
+  </table>
+    </form>
+
+  </div>

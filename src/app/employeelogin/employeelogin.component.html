@@ -1,0 +1,40 @@
+<!-- <div class="loginBox"  style="height: 170px;width: 400px;border-style: inset;border-radius: 10px;border-width: 5px; margin-left:  550px ;">
+    
+    <form  class="form container">
+        <table style="border: 1;">
+            <tr>
+        <label style="color: rgb(0, 0, 0);">Enter user name:</label>
+        <td><input type="text" class="txt txt-primary ml-id" name="id"   placeholder="enter username " [(ngModel)]="id"><br>
+        </td></tr>
+        <br>
+        <tr>
+        <label style="color: rgb(0, 0, 0);">Enter password:</label>
+        <td><input type="password" class="txt txt-primary ml-id" name="password" placeholder="enter password"  [(ngModel)]="password"><br></td>
+    </tr>
+    <br>
+       <tr><td><button type="submit" class="btn btn-primary" style="margin: right  50px;" (click)="checkEmpdata()" >submit</button></td>
+      <td><button type="reset" class="btn btn-primary" style="margin: right  50px;"  >Reset</button></td></tr> 
+    
+      
+    </table>
+
+    
+        
+    
+    </form>
+   
+    </div>
+ -->
+ <div class="login">
+    <div class="login-triangle"></div>
+    
+    <h2 class="login-header">Welcome </h2>
+    <h4 class="login-header">Employee login </h4>
+  
+    <form class="login-container">
+      <p><input type="text" name="id" placeholder="Employeeid" [(ngModel)]="id"></p>
+      <p><input type="password" name="password" placeholder="Password" [(ngModel)]="password"></p>
+      <p><input type="submit" value="Log in" (click)="checkEmpdata()"></p>
+      <p><input type="reset"  class="btn btn-primary"value="reset" ></p>
+    </form>
+  </div>

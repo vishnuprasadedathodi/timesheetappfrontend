@@ -1,0 +1,49 @@
+
+<app-adminheader></app-adminheader>
+<br>
+<br>
+<div class="col-sm-4" >
+    <input type="text" name="search" placeholder="search...." [(ngModel)]="term">
+</div> 
+
+<br>
+<div>
+
+    <button type="button" class="btn btn-success" routerLink="/admin/date">Customized View</button>
+    </div>
+    <br>
+    <br>
+
+<table class="table table-striped" >
+    <thead>
+        <tr>
+            <th >Employee Id</th>
+            <th >Name</th>
+            <th>Date</th>    
+            <th >From</th>
+            <th >To</th>
+            <th>Status</th>
+            
+        </tr>
+    </thead>
+
+    <tbody style="font-size: medium;;">
+        <tr *ngFor="let t of timearr |paginate: { itemsPerPage: 4, currentPage: p }|filter:term" >
+
+
+           <td>{{t.id}}</td>
+            <td>{{t.name}}</td> 
+            <td>{{t.date}}</td>
+            <td>{{t.start_time}}</td>
+            <td>{{t.end_time}}</td>
+            <td>{{t.status}}</td>
+           
+            
+            
+            
+        </tr>
+    </tbody>
+</table>
+<pagination-controls (pageChange)="p = $event"></pagination-controls>
+
+<td><button type="button" class="btn btn-primary"  routerLink="/admin/dashboard">Back</button></td>

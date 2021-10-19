@@ -1,0 +1,48 @@
+
+<app-adminheader></app-adminheader>
+<br>
+<br>
+<div class="col-sm-4" >
+    <input type="text" name="search" placeholder="search...." [(ngModel)]="term">
+</div> 
+<br>
+<br>
+<table class="table table-striped" >
+    <thead>
+        <tr>
+            <th>Emp_id</th>
+            <th >name</th>
+            <th>Date</th>
+            <th>Number of Days</th> 
+            <th>Leave Type</th> 
+
+            <th>status</th>    
+           
+          
+        </tr>
+    </thead>
+
+    <tbody style="font-size: medium;;">
+        
+        <tr *ngFor="let l of leavearr |paginate: { itemsPerPage: 5, currentPage: p }|filter:term">
+
+            <td>{{l.id}}</td>
+            <td>{{l.name}}</td>
+            <td>{{l.date}}</td>
+            <td>{{l.days}}</td>
+            <td>{{l.leave_type}}</td>
+            <td>{{l.status}}</td>
+          
+            
+            
+            <td ><button type="submit" class="btn btn-success" [routerLink]="['/admin','editleave',l.lid]">Edit</button></td>
+            
+        </tr>
+    </tbody>
+</table>
+<br>
+<pagination-controls (pageChange)="p = $event"></pagination-controls>
+
+<br>
+<br>
+<td><button type="button" class="btn btn-primary"  routerLink="/admin/dashboard">Back</button></td>

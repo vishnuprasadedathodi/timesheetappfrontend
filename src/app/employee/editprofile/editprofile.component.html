@@ -1,0 +1,98 @@
+
+
+ <app-employeeheader></app-employeeheader>
+
+ <br>
+ <br>
+
+<form #frmval=ngForm name="myform" class="form" (ngSubmit)="editEmp(frmval.value)" class="form container">
+    <div class="form-group">
+        <label>Name</label>
+        <input type="text" name="name"  #name="ngModel" class="form-control"  pattern="^[a-zA-Z ]{3,30}$" ngModel required [ngModel]="empobj?.name">
+        <div *ngIf="name.touched && name.invalid">
+            <div class="alert alert-danger" *ngIf="name.hasError('required')">This field is required</div>
+            <div class="alert alert-danger" *ngIf="name.hasError('pattern')">Name should only contain characters</div>
+        </div>
+<br>
+    
+<div class="form-group">
+        <label>Age</label>
+        <input type="text" name="age"  #age="ngModel" class="form-control"  ngModel required [ngModel]="empobj?.age" >
+        <div *ngIf="age.touched && age.invalid">
+            <div class="alert alert-danger" *ngIf="age.hasError('required')">This field is required</div>
+
+        </div>
+
+
+</div>
+<br>
+<div class="form-group" >
+        <label>Gender</label>
+        <input type="radio" id="male" name="gender" value="male" ngModel required  [ngModel]="empobj?.gender">Male
+        
+        <input type="radio" id="female" name="gender" value="female" ngModel required [ngModel]="empobj?.gender">Female
+        
+        <input type="radio" id="other" name="gender" value="other" ngModel required [ngModel]="empobj?.gender">Other
+        
+        </div>      
+
+</div>
+<br>
+    
+<div class="form-group">
+        <label>Contact Number</label>
+        <input type="text" name="phn_no"  #phn_no="ngModel" class="form-control"  pattern="^([0-9]{10,12})$" ngModel required [ngModel]="empobj?.phn_no" >
+        <div *ngIf="phn_no.touched && phn_no.invalid">
+            <div class="alert alert-danger" *ngIf="phn_no.hasError('required')">This field is required</div>
+            <div class="alert alert-danger" *ngIf="phn_no.hasError('pattern')">contact number should be in correct fromat</div>
+        </div>
+    
+</div>
+
+<br>
+
+    <div class="form-group">
+        <label for="designation">Designation</label>
+
+        <select name="designation" id="designation" class ="form-control" ngModel required [ngModel]="empobj?.designation"  >
+            <option value=""></option>
+        <option value="Software Developer">Software Developer</option>
+        <option value="Data Analyst">Data Analyst</option>
+        <option value="HR">HR</option>
+        <option value="Testing">Testing</option>
+        <option value="Trainer">Trainer</option>
+        <option value="System Analyst">System Analyst</option>
+        
+      
+    </select>
+
+    </div>
+<br>
+    <div class="form-group">
+        <label>Email id</label>
+        <input type="text" name="email"  #email="ngModel" class="form-control"  pattern="^[a-z0-9._%+-]+@([a-z0-9.-]{5})+\.[a-z]{2,4}$" ngModel required [ngModel]="empobj?.email"  >
+        <div *ngIf="email.touched && email.invalid">
+            <div class="alert alert-danger" *ngIf="email.hasError('required')">This field is required</div>
+            <div class="alert alert-danger" *ngIf="email.hasError('pattern')">Email id should be in correct fromat</div>
+        </div>
+    </div>
+
+    
+
+    <br>
+
+   
+    <table>
+    <tr><td><button type="submit" class="btn btn-primary" [disabled]="frmval.invalid">submit</button></td>
+        <td><button type="button" class="btn btn-primary"  routerLink="/employee/profile">Back</button></td>
+       
+    
+    
+
+    </tr>
+    </table>
+
+</form>
+
+
+

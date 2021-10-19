@@ -1,0 +1,41 @@
+<app-employeeheader></app-employeeheader>
+<br>
+<div class="col-sm-4" >
+    <input type="text" name="search" placeholder="search...." [(ngModel)]="term">
+</div> 
+<br>
+<table class="table table-striped" >
+    <thead>
+        <tr>
+            <th>Date</th>
+            <th >Days</th>
+            <th>Leave Type</th>
+            <th>status</th>    
+           
+          
+        </tr>
+    </thead>
+
+    <tbody style="font-size: medium;;">
+        
+        <tr *ngFor="let v of viewarr |paginate: { itemsPerPage: 5, currentPage: p }|filter:term">
+
+           <td>{{v.date}}</td>
+            <td>{{v.days}}</td> 
+            <td>{{v.leave_type}}</td>
+            <td>{{v.status}}</td>
+          
+            
+            
+            
+            
+        </tr>
+        
+    </tbody>
+    
+</table>
+<br>
+<br>
+<pagination-controls (pageChange)="p = $event"></pagination-controls>
+<br>
+<td><button type="button" class="btn btn-primary"  routerLink="/employee/profile">Back</button></td>
